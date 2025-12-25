@@ -1,2 +1,2 @@
-[2025-12-25 19:50:29] INFO  tests.RadioButtonTest - The user is on homepage
-[2025-12-25 19:50:29] INFO  tests.RadioButtonTest - Test passed
+[2025-12-25 19:50:29] INFO  tests.HomeTest - The user is on homepage
+[2025-12-25 19:50:29] INFO  tests.HomeTest - Test passed
