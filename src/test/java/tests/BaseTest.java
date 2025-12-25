@@ -16,6 +16,7 @@ import java.lang.reflect.Method;
 public class BaseTest {
 
     public WebDriver driver;
+    RadioButtonPage radioButtonPage;
 
 
     protected Logger logger;
@@ -59,7 +60,7 @@ public class BaseTest {
     }
 
     public void createPageObjects() {
-
+    radioButtonPage= new RadioButtonPage(driver);
     }
 
 }
