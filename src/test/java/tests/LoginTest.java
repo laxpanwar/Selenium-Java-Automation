@@ -4,6 +4,7 @@ import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.DashboardPage;
 import pages.LoginPage;
 
 public class LoginTest extends BaseTest {
@@ -12,21 +13,9 @@ public class LoginTest extends BaseTest {
 
     @Test
     @Description("Verify user can login using valid credentials")
-    public void loginWithValidCredentials() {
-        logger.info("The user is on orangehrm login Page");
-        LoginPage loginpage = new LoginPage(driver);
-
-        logger.info("entering a valid username");
-        loginpage.enterValidUsername();
-
-        logger.info("entering a valid password");
-        loginpage.enterValidPassword();
-
-        logger.info("clicking on the login button");
-        loginpage.clickLoginButton();
-
-        String actualDashboardText = loginPage.getDashBoardText();
-        Assert.assertEquals(actualDashboardText, "Dashboard", "Dashboard text mismatch after login");
-
+    public static void verifyLogin() throws InterruptedException {
+        LoginPage loginPage = new LoginPage(driver);
+        DashboardPage dashboardPage = loginPage.loginWithValidCredentials("Admin", "admin123");
+        Assert.assertTrue(dashboardPage.isDashboardDisplayed());
     }
 }

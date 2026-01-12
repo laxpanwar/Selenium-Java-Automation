@@ -15,7 +15,7 @@ import java.lang.reflect.Method;
 
 public class BaseTest {
 
-    public WebDriver driver;
+    public static WebDriver driver;
     HomePage homePage;
     LoginPage loginPage;
 

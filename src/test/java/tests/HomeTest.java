@@ -34,8 +34,6 @@ public  class HomeTest extends BaseTest {
             logger.info("The user is on Practice Page");
             HomePage homePage = new HomePage(driver);
             homePage.enterCountry();
-            //Assert.ass();
-            logger.info("Test passed");
         } catch (Exception e) {
             logger.error("Test failed -> {}", e.getMessage());
             throw e;
