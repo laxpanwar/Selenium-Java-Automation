@@ -16,7 +16,8 @@ import java.lang.reflect.Method;
 public class BaseTest {
 
     public WebDriver driver;
-    HomePage radioButtonPage;
+    HomePage homePage;
+    LoginPage loginPage;
 
 
     protected Logger logger;
@@ -26,7 +27,7 @@ public class BaseTest {
     public void setUp(Method method) {
         driver = new ChromeDriver();
         driver.manage().window().maximize(); // will maximize the window
-        driver.get("https://rahulshettyacademy.com/AutomationPractice/");
+        driver.get("https://opensource-demo.orangehrmlive.com/");
 
         String testName = method.getName();
         logFilePath = "logs/" + testName + "_" + System.currentTimeMillis() + ".log";
@@ -60,7 +61,10 @@ public class BaseTest {
     }
 
     public void createPageObjects() {
-    radioButtonPage= new HomePage(driver);
+    homePage = new HomePage(driver);
+    loginPage = new LoginPage(driver);
+
+
     }
 
 }
