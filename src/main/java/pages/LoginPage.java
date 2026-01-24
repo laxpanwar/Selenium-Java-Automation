@@ -7,15 +7,15 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {super(driver);}
 
-    private final By USER_NAME = By.name("username");
-    private final By PASSWORD_FIELD = By.name("password");
-    private final By LOGIN_BUTTON= By.xpath("//button[@type='submit']");
+    private final By userName = By.name("username");
+    private final By passwordField = By.name("password");
+    private final By loginButton = By.xpath("//button[@type='submit']");
 
     @Step("Verify user can enter valid user name")
     public DashboardPage loginWithValidCredentials(String user, String pass) throws InterruptedException {
-       wait.until(ExpectedConditions.visibilityOfElementLocated(USER_NAME)).sendKeys(user);
-       wait.until(ExpectedConditions.visibilityOfElementLocated(PASSWORD_FIELD)).sendKeys(pass);
-       wait.until(ExpectedConditions.visibilityOfElementLocated(LOGIN_BUTTON)).click();
+       wait.until(ExpectedConditions.visibilityOfElementLocated(userName)).sendKeys(user);
+       wait.until(ExpectedConditions.visibilityOfElementLocated(passwordField)).sendKeys(pass);
+       wait.until(ExpectedConditions.visibilityOfElementLocated(loginButton)).click();
         return new DashboardPage(driver);
     }
 }

@@ -9,7 +9,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
-import pages.*;
+import pages.HomePage;
+import pages.LoginPage;
 
 import java.lang.reflect.Method;
 
